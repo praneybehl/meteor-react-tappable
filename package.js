@@ -1,24 +1,23 @@
 Package.describe({
   name: 'praneybehl:react-tappable',
-  version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
+  version: '0.7.1',
+  summary: 'Tappable component for native tap event handling packaged for Meteor',
+  git: 'https://github.com/praneybehl/meteor-react-tappable',
   documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
-  api.addFiles('react-tappable.js');
+  api.use('react@0.1.13');
+  api.use('cosmos:browserify@0.8.3', 'client');
+  api.addFiles('package.browserify.js', 'client');
+  api.addFiles('package.browserify.options.json', 'client');
+  api.export('Tappable');
 });
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('praneybehl:react-tappable');
-  api.addFiles('react-tappable-tests.js');
+
+Npm.depends({
+  "react-tappable": "0.7.1",
+  "exposify": "0.5.0"
 });
