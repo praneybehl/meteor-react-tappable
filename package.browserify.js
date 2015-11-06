@@ -1,0 +1,1 @@
+Tappable = require('react-tappable');
