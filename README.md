@@ -16,7 +16,7 @@ When touch events are not supported, it will fall back to mouse events.
 ### Adding it to your project
 
 ~~~
-meteor add praneybehl:react-dropzone
+meteor add praneybehl:react-tappable
 ~~~
 
 
